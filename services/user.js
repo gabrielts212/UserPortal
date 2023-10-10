@@ -2,17 +2,15 @@ import jwt from "jsonwebtoken";
 
 let users = [];
 
-const SECRET = process.env.JWT_SECRET;
-
 function createToken(user) {
-  return jwt.sign({ email: user.email, name: user.name }, SECRET);
+  return jwt.sign({ email: user.email, name: user.name }, "awda45dw4a4d4a64wd6d5a4w");  // Chave JWT vazia (não secreta)
 }
 
 function readToken(token) {
   try {
-    return jwt.verify(token, SECRET);
+    return jwt.verify(token, "");  // Chave JWT vazia (não secreta)
   } catch (err) {
-    throw new Error("Token invalido");
+    throw new Error("Token inválido");
   }
 }
 
@@ -22,7 +20,7 @@ export function verifica(token) {
 
 export function cadastro(body) {
   const user = users.find(({ email }) => email === body.email);
-  if (user) throw new Error("Usuario já cadastrado");
+  if (user) throw new Error("Usuário já cadastrado");
 
   users.push(body);
 

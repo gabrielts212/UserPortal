@@ -14,10 +14,9 @@ function BeerList() {
   const [beers, setBeers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
-    fetch(apiUrl)
+    fetch("https://api.punkapi.com/v2/beers")
       .then((response) => response.json())
       .then((data) => {
         setBeers(data);
@@ -36,7 +35,7 @@ function BeerList() {
 
   return (
     <Box p={10} minH="90vh" bg="#1e272e" color="white">
-      <Heading as="h1" mb={6} textAlign="center"color="#0B68F4">
+      <Heading as="h1" mb={6} textAlign="center" color="#0B68F4">
         Lista de Cervejas
       </Heading>
       <InputGroup mb={4}>

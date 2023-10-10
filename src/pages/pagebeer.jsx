@@ -21,14 +21,14 @@ export const getServerSideProps = async ({ req, res }) => {
 
     return { props: {} };
   } catch (err) {
-    // return { props: {} };
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/",
-      },
+    return { props: {} };
+    // return {
+    //   redirect: {
+    //     permanent: false,
+    //     destination: "/",
+    //   },
 
-      props: {},
-    };
+    //   props: {},
+    // };
   }
 };

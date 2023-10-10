@@ -42,7 +42,7 @@ const Register = () => {
       const json = await response.json();
       if (response.status !== 201) throw new Error(json);
       setCookie("authorization", json);
-      router.push("/pagebeer");
+      router.push("/");
     } catch (err) {
       setError(err.message);
     }
@@ -103,7 +103,7 @@ const Register = () => {
                 required
               />
             </FormControl>
-            <FormControl isInvalid={error}>
+            <FormControl >
               <FormLabel htmlFor="password" color="white">
                 Senha
               </FormLabel>
