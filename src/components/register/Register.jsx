@@ -50,21 +50,41 @@ const Register = () => {
 
   return (
     <Flex
-      minH="90vh"
-      bg="#1e272e"
-      textColor="red"
-      display="flex"
+      minH="100vh"
+      bg="transparent"
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      position="relative"
+      textColor="red"
+      display="flex"
     >
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      >
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+
       <Box
         rounded="full"
-        maxW="100%"
-        p={20}
+        maxW="800px"
+        p={14}
         border="black"
         borderRadius="xl"
         boxShadow="xl"
+        zIndex="1"
+        bg="rgba(30, 39, 46, 0.4)"
       >
         <Text fontSize="2xl" fontWeight="bold" mb={4} color="#0B68F4">
           Crie sua conta
@@ -121,7 +141,6 @@ const Register = () => {
             </FormControl>
 
             <MyButton type="submit" bg="#0B68F4" color="white" width="100%">
-              {" "}
               Cadastrar
             </MyButton>
 
