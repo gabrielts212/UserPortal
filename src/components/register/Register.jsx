@@ -103,7 +103,7 @@ const Register = () => {
                 required
               />
             </FormControl>
-            <FormControl >
+            <FormControl>
               <FormLabel htmlFor="password" color="white">
                 Senha
               </FormLabel>
