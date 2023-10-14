@@ -68,7 +68,7 @@ const Login = () => {
         </Text>
         <form onSubmit={handleForm}>
           <VStack spacing={4} width="100%" maxWidth="400px" as="flex">
-            <FormControl >
+            <FormControl>
               <FormLabel htmlFor="email" color="white">
                 Email
               </FormLabel>
