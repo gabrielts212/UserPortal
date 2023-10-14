@@ -5,6 +5,20 @@ import CustomLink from "../link/link";
 
 const Header = ({ title }) => {
   return (
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <Box>
       <Flex
         bg="#0c67fe"
