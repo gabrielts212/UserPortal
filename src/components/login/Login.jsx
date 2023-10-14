@@ -47,21 +47,39 @@ const Login = () => {
 
   return (
     <Flex
-      minH="90vh"
-      bg="#1e272e"
-      textColor="red"
-      display="flex"
-      flexDirection="column"
+      minH="100vh"
+      bg="transparent"
       justifyContent="center"
       alignItems="center"
+      position="relative"
     >
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      >
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+
       <Box
         rounded="full"
         maxW="100%"
-        p={20}
+        p={14}
         border="black"
         borderRadius="xl"
         boxShadow="xl"
+        // bg="#74b9ff"
+        zIndex="1"
+        bg="rgba(30, 39, 46, 0.4)"
       >
         <Text fontSize="2xl" fontWeight="bold" mb={4} color="#0B68F4">
           Faça login na sua conta
