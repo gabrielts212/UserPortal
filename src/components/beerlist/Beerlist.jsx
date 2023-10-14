@@ -34,56 +34,81 @@ function BeerList() {
   }, [searchTerm, beers]);
 
   return (
-    <Box p={10} minH="90vh" bg="#1e272e" color="white">
-      <Heading as="h1" mb={6} textAlign="center" color="#0B68F4">
-        Lista de Cervejas
-      </Heading>
-      <InputGroup mb={4}>
-        <InputLeftElement pointerEvents="none">
-          <SearchIcon color="gray.300" />
-        </InputLeftElement>
-        <Input
-          type="text"
-          placeholder="Pesquisar por nome"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </InputGroup>
-      <SimpleGrid columns={[1, 1, 4]} spacing={3}>
-        {searchResults.map((beer) => (
-          <Box
-            key={beer.id}
-            borderWidth="1px"
-            borderRadius="lg"
-            p={4}
-            boxShadow="base"
-            transition="transform 0.2s"
-            _hover={{ transform: "scale(1.02)" }}
-          >
-            <img
-              src={beer.image_url}
-              alt={beer.name}
-              style={{
-                height: "20%",
-                maxWidth: "2rem",
-              }}
-            />
-            <Heading as="h2" size="md" mb={2} color="#0B68F4" mt="5">
-              {beer.name}
-            </Heading>
-            <Text>
-              <strong>Tagline:</strong> {beer.tagline}
-            </Text>
-            <Text>
-              <strong>Descrição:</strong> {beer.description}
-            </Text>
-            <Text>
-              <strong>ABV:</strong> {beer.abv}%
-            </Text>
-          </Box>
-        ))}
-      </SimpleGrid>
-    </Box>
+    <div style={{
+      position: "relative",
+      width: "100%",
+      minHeight: "100vh",
+      overflow: "hidden",
+    }}>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+        }}
+      >
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+
+      <Box p={10} bg="rgba(30, 39, 46, 0.4)" color="white" position="relative" zIndex={1}>
+        <Heading as="h1" mb={6} textAlign="center" color="#0B68F4">
+          Lista de Cervejas
+        </Heading>
+        <InputGroup mb={4}>
+          <InputLeftElement pointerEvents="none">
+            <SearchIcon color="gray.300" />
+          </InputLeftElement>
+          <Input
+            type="text"
+            placeholder="Pesquisar por nome"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </InputGroup>
+        <SimpleGrid columns={[1, 1, 4]} spacing={3}>
+          {searchResults.map((beer) => (
+            <Box
+              key={beer.id}
+              borderWidth="1px"
+              borderRadius="lg"
+              p={4}
+              boxShadow="base"
+              transition="transform 0.2s"
+              _hover={{ transform: "scale(1.02)" }}
+            >
+              <img
+                src={beer.image_url}
+                alt={beer.name}
+                style={{
+                  height: "20%",
+                  maxWidth: "2rem",
+                }}
+              />
+              <Heading as="h2" size="md" mb={2} color="#0B68F4" mt="5">
+                {beer.name}
+              </Heading>
+              <Text>
+                <strong>Tagline:</strong> {beer.tagline}
+              </Text>
+              <Text>
+                <strong>Descrição:</strong> {beer.description}
+              </Text>
+              <Text>
+                <strong>ABV:</strong> {beer.abv}%
+              </Text>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </Box>
+    </div>
   );
 }
 
