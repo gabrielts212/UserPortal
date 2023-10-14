@@ -2,6 +2,8 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import Logo from "../../assets/favicon.ico";
 import CustomLink from "../link/link";
+import { motion } from "framer-motion";
+
 
 const Header = ({ title }) => {
   return (
@@ -18,7 +20,7 @@ const Header = ({ title }) => {
 
 
 
-    
+
     <Box>
       <Flex
         bg="#0c67fe"
@@ -29,13 +31,15 @@ const Header = ({ title }) => {
       >
         <Box>
           <CustomLink to="/">
-            <Image
-              src={Logo}
-              alt="Logo"
-              width={50}
-              height={50}
-              cursor="pointer"
-            />
+             <motion.div whileHover={{ rotate: 720 }}>
+              <Image
+                src={Logo}
+                alt="Logo"
+                width={50}
+                height={50}
+                cursor="pointer"
+              />
+            </motion.div>
           </CustomLink>
         </Box>
         <Box>
