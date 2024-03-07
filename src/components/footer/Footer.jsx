@@ -6,8 +6,7 @@ const Footer = () => {
     <Box bg="#0c67fe" color="white" py={4} textAlign="center">
       <div className="container mx-auto">
         <Text>
-          &copy; {new Date().getFullYear()} Meu Site. Todos os direitos
-          reservados.
+          &copy; {new Date().getFullYear()} Gabriel Nascimento. Todos os direitos reservados.
         </Text>
       </div>
     </Box>
